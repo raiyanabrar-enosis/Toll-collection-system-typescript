@@ -1,39 +1,48 @@
-const tolls: { [key: string]: number } = {
-	SM: 50,
-	MD: 80,
-	LG: 160,
-	XL: 250,
-};
+export class Vehicle {
+	toll: number = 0;
 
-type VehicleType = Car | Bus | Truck | Bike;
-export type VehicleTypeString = "car" | "bus" | "truck" | "bike";
-export type VehicleSize = "SM" | "MD" | "LG" | "XL";
+	collectToll(size: string) {
+		const tolls: { [key: string]: number } = {
+			SM: 50,
+			MD: 80,
+			LG: 160,
+			XL: 250,
+		};
 
-export class Vehicle<T extends VehicleTypeString> {
-	details?: VehicleType;
-	toll: number;
-
-	constructor(type: T) {
-		if (type === "bike") this.details = new Bike();
-		else if (type === "car") this.details = new Car();
-		else if (type === "bus") this.details = new Bus();
-		else if (type === "truck") this.details = new Truck();
-
-		if (this.details) this.toll = tolls[this.details.size];
-		else this.toll = 0;
+		this.toll = tolls[size];
 	}
 }
 
-export class Bike {
+export class Bike extends Vehicle {
 	size = "SM";
+
+	constructor() {
+		super();
+		this.collectToll(this.size);
+	}
 }
 
-export class Car {
+export class Car extends Vehicle {
 	size = "MD";
+
+	constructor() {
+		super();
+		this.collectToll(this.size);
+	}
 }
-export class Bus {
+export class Bus extends Vehicle {
 	size = "LG";
+
+	constructor() {
+		super();
+		this.collectToll(this.size);
+	}
 }
-export class Truck {
+export class Truck extends Vehicle {
 	size = "XL";
+
+	constructor() {
+		super();
+		this.collectToll(this.size);
+	}
 }

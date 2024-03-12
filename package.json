@@ -5,8 +5,7 @@
 	"main": "index.js",
 	"type": "module",
 	"scripts": {
-		"start": "node app.js",
-		"compile": "tsc --module es6 service/VehicleService.ts"
+		"start": "tsc && node app.js"
 	},
 	"keywords": [],
 	"author": "",

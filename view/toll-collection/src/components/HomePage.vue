@@ -49,7 +49,7 @@
 		tollData.value = {
 			toll: "Tk. " + res.data.toll,
 			type: capitalizeFirstLetter(res.data.type),
-			size: res.data.details.size,
+			size: res.data.size,
 		};
 	};
 

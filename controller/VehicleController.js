@@ -1,4 +1,4 @@
-import * as VehicleService from "../service/VehicleService.js";
+import * as VehicleService from "../out/service/VehicleService.js";
 
 export default class VehicleController {
 	static createVehicle = (req, res) => {
