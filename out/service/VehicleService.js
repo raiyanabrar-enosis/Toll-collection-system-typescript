@@ -1,4 +1,7 @@
-import { Bike, Car, Bus, Truck } from "../model/Vehicle.js";
+import { Bike } from "../model/Bike.js";
+import { Bus } from "../model/Bus.js";
+import { Car } from "../model/Car.js";
+import { Truck } from "../model/Truck.js";
 export const createVehicle = (type) => {
     if (type === "bike")
         return new Bike();
@@ -8,7 +11,4 @@ export const createVehicle = (type) => {
         return new Bus();
     else if (type === "truck")
         return new Truck();
-};
-export const getVehicles = (type) => {
-    console.log(type);
 };
